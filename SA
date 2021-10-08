@@ -1,0 +1,65 @@
+ <!doctype html>
+ <html>
+
+ <head>
+   <!-- Include Ecwid JS SDK -->
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh8jr2d4jYTikGG8IcBSjbzPYLCx3I24Y&amp;libraries=geometry,drawing,places"></script>
+   <script src="https://djqizrxa6f10j.cloudfront.net/ecwid-sdk/js/1.2.8/ecwid-app.js"></script>
+
+   <script>
+     // Initialize the application
+     EcwidApp.init({
+       app_id: "custom-app-65026120-3", // your client_id
+       autoloadedflag: true, 
+       autoheight: true
+     });
+
+     // Get the store ID and access token
+     var storeData = EcwidApp.getPayload();
+     var storeId = storeData.store_id;
+     var accessToken = storeData.access_token;
+     var language = storeData.lang;
+
+     if (storeData.public_token !== undefined){
+       var publicToken = storeData.public_token;
+     }
+
+     if (storeData.app_state !== undefined){
+       var appState = storeData.app_state;
+     }
+
+     // do something...
+
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh8jr2d4jYTikGG8IcBSjbzPYLCx3I24Y&amp;libraries=geometry,drawing,places"></script>
+     <script type="text/javascript">
+         google.maps.event.addDomListener(window, 'load', function () {
+             var places = new google.maps.places.Autocomplete(document.getElementById('txtPlaces'));
+             google.maps.event.addListener(places, 'place_changed', function () {
+                 var place = places.getPlace();
+                 var address = place.formatted_address;
+                 var latitude = place.geometry.location.lat();
+                 var longitude = place.geometry.location.lng();
+                 window.location.href="https://www.ellure.net/booking.html";
+             });
+         });
+     </script>
+     <span></span>
+     <input type="text" id="txtPlaces" style="width: 300px" placeholder="ENTER YOUR ADDRESS" />
+
+
+   </script>
+
+   <!-- Include Ecwid CSS Framework -->
+   <link rel="stylesheet" href="https://d35z3p2poghz10.cloudfront.net/ecwid-sdk/css/1.3.13/ecwid-app-ui.css"/>  
+ </head>
+
+ <body class='normalized'>
+   <div></div>
+
+ <!-- JS for CSS Framework components -->
+   <script src="https://d35z3p2poghz10.cloudfront.net/ecwid-sdk/css/1.3.13/ecwid-app-ui.min.js
+
+ "></script>
+ </body>
+
+ </html>
